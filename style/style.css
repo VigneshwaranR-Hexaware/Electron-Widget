@@ -1,0 +1,337 @@
+/* -------------------------------------------------------------------
+Copyright (c) 2017-2017 Hexaware Technologies
+This file is part of the Innovation LAB - Offline Bot.
+------------------------------------------------------------------- */
+html,body{
+    height:100%;
+     overflow-y: hidden;
+}
+.main-container{
+    background-color: #fff;
+     height:100%;
+     overflow-y: hidden;
+}
+
+.chat-body {
+    height: 436px;
+    overflow-y: scroll;
+    background-color: #f5f5f5;
+}
+
+.chat-body h1 {
+    text-align: center;
+    padding-top: 30%;
+}
+
+
+.chat-user-dialog {
+  background-color: #00aced;
+  margin-top: 0%;
+  margin-left: 9%;
+  height: 43px;
+  left: 17px;
+  margin-right: 9%;
+  padding: 5% 7% 8% 7%;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.21), 0 6px 20px 0 rgba(0, 0, 0, 0);
+  margin-bottom: 0;
+  line-height: 1.4;
+  color: #fcf8e3;
+  font-size: .875rem;
+  overflow-wrap: break-word
+}
+
+.user-txt-space {
+    position: relative;
+    left: 10%;
+}
+
+.bot-txt-space {
+  position: relative;
+  right: 42%;
+}
+/* Following are carosel css */
+
+.carousel {
+    margin-bottom: 0;
+    padding: 0 40px 30px 40px;
+}
+
+.carousel-control {
+  left: -4%;
+  /* right: -54px; */
+  height: 10%;
+  width: 10%;
+  background: none repeat scroll 0 0 rgba(66, 133, 244, 0);
+  /* border: 1px solid #4285f4; */
+  border-radius: 23px;
+  margin-top: 43%;
+  /* padding: 0%; */
+}
+
+.carousel-control.right {
+    right: -12px;
+}
+
+
+/* The indicators */
+
+.carousel-indicators {
+    right: 50%;
+    top: auto;
+    bottom: -10px;
+    margin-right: -19px;
+}
+
+
+/* The colour of the indicators */
+
+.carousel-indicators li {
+    background: #cecece;
+}
+
+.carousel-indicators .active {
+    background: #428bca;
+}
+
+.airlinePadding {
+    padding: 10px 0px
+}
+
+.pmd-card-inverseblue {
+    background-color: #1E90FF;
+    color: #eceeef;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    padding: 11px 41px 13px 13px;
+    margin: 23px;
+}
+.text-color-red{
+    color: #DC143C;
+}
+
+.card-custom{
+  border-radius: 15px;
+  margin-bottom: 30px;
+  padding: 11px 41px 13px 13px;
+  margin: 23px;
+  background-color: #fff;
+}
+
+.carousel-custom {
+  border-radius: 15px;
+  background-color: #f5f5f5;
+  padding: 0% 0% 0% 0%;
+  margin: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.21), 0 6px 20px 0 rgba(0, 0, 0, 0);
+}
+
+.custom-image-wrap {
+  display: block;
+    padding: 4px;
+    margin-bottom: -5%;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px 15px 0px 0px;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+
+.img-circle {
+  border-radius: 15px 15px 0px 0px;
+}
+
+.carousel-title {
+  font-size: 105%;
+  font-weight: bold;
+  margin: 2% 2% 0% 2%
+}
+
+.carousel-subtitle {
+  font-size: 85%;
+  font-weight: 0%;
+  margin: 2% 2% 3% 2%;
+}
+
+.card-title {
+  font-size: 105%;
+      font-weight: bold;
+      margin: 2% 2% 0% -4%;
+      color: #606060;
+}
+
+.card-subtitle {
+  font-size: 85%;
+  font-weight: 0%;
+  margin: 2% 2% 3% -4%;
+}
+
+.btn-carousel {
+  min-width: 96%;
+  padding: 2% 3%;
+  margin: 3% 0% -2% 2%;
+  border-radius: 25px;
+}
+
+.btn {
+  min-width: 7%;
+  padding: 2% 3%;
+  margin: 3% 0% -2% 2%;
+  border-radius: 25px;
+  font-size: smaller;
+}
+
+.custom-infocard {
+    border-radius: 15px;
+    padding: 0% 0% 0% 0%;
+    margin: -1% 5% 5% 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.21), 0 6px 20px 0 rgba(0, 0, 0, 0);
+}
+
+.bot-res-timestamp-card{
+  text-align: left;
+  margin: 0% 0% 0% 9%;
+  font-size: 77%;
+  color: #ada497;
+  display: inline-block;
+  bottom: 19px;
+  position: relative;
+  left: -4%;
+}
+
+.background-color-custom {
+  background-color: #f5f5f5;
+}
+
+.custom-quick-reply-background {
+  background-color: white;
+  border-radius: 15px;
+  height: 43px;
+  left: 2px;
+  margin-top: 3%;
+  margin-left: 9%;
+  margin-right: 9%;
+  padding: 5% 7% 5% 7%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.21), 0 6px 20px 0 rgba(0, 0, 0, 0);
+}
+
+.user-timestamp {
+    /*text-align: right;*/
+    /*margin: 0% 5% 0% 0%;*/
+    font-size: 77%;
+    color: #ada497;
+    display: inline-block;
+    height: 0%;
+    /* text-align: right; */
+    left: 86%;
+    position: relative;
+    bottom: 16px;
+}
+
+.bot-res-timestamp {
+  text-align: left;
+  margin: 0% 0% 0% 9%;
+  font-size: 77%;
+  color: #ada497;
+  display: inline-block;
+  bottom: 26px;
+  position: relative;
+}
+
+.list-group-item-text-user {
+    margin-bottom: 4%;
+    line-height: 1.4;
+    color: #fcf8e3;
+    font-size: .875rem;
+    overflow-wrap: break-word;
+    background-color: #00aced;
+    max-width: 48%;
+    border-radius: 15px;
+    display: block;
+    padding: 4% 3% 1% 3%;
+    position: relative;
+    left: 45%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.21), 0 6px 20px 0 rgba(0, 0, 0, 0);
+    /* margin: 2%; */
+    /* max-width: 50%; */
+    /* text-align: right; */
+    min-width: 50%;
+}
+
+.list-group-item-text-bot {
+    margin: 0% 0% 4% 2%;
+    line-height: 1.4;
+    color: #777777;
+    font-size: .875rem;
+    overflow-wrap: break-word;
+    background-color: #fff;
+    max-width: 48%;
+    border-radius: 15px;
+    display: block;
+    padding: 4% 3% 1% 3%;
+    position: relative;
+    left: 45%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.21), 0 6px 20px 0 rgba(0, 0, 0, 0);
+    /* margin: 2%; */
+    /* max-width: 50%; */
+    /* text-align: right; */
+    min-width: 50%;
+}
+
+.bot-txt-reply {
+    background-color: white;
+    border-radius: 15px;
+    height: 43px;
+    left: 2px;
+    margin-top: 3%;
+    margin-left: 9%;
+    margin-right: 9%;
+    padding: 5% 7% 5% 7%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.21), 0 6px 20px 0 rgba(0, 0, 0, 0);
+}
+
+.welcome-message {
+    font-size: larger;
+    color: #5e5e5e;
+    position: relative;
+    top: 15%;
+    margin: 10%
+}
+
+.carousel-body {
+  background-color: white;
+}
+
+.pmd-card-title {
+  padding: 16px 16px 0 16px;
+    margin-bottom: 0px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.quick-replies-buttons {
+  text-align: center;
+}
+
+.bot-res-timestamp-qr {
+    text-align: left;
+    margin: 2% 5% 0% 6%;
+    font-size: 77%;
+    color: #ada497;
+}
+
+.list-group-item-quick-reply-space{
+  background-color: white;
+  border-radius: 15px;
+  color: #777777;
+  font-size: .875rem;
+  padding: 4% 4% 4% 3%;
+  margin-bottom: 4%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.21), 0 6px 20px 0 rgba(0, 0, 0, 0);
+  overflow-wrap: break-word;
+  position: relative;
+  line-height: 1.4;
+  margin: 0% 5% 0% 5%;
+}

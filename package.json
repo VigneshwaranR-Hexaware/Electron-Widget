@@ -1,0 +1,32 @@
+{
+  "name": "webchatwidget",
+  "productName": "Electron tutorial app",
+  "version": "0.1.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "electron bin.js --scopes https://www.google.com/m8/feeds --clientId 8157699356-nel0cnuv95pf2lqpv5q45lls0bka6igp.apps.googleusercontent.com --clientSecret 1EAwIA6opzvpDvhypLT9l3LE"
+  },
+  "dependencies": {
+    "electron":"^1.7.9",
+    "co": "^4.6.0",
+    "electron-google-oauth": "^2.0.0",
+    "electron-packager": "^9.0.0",
+    "electron-positioner": "^3.0.0",
+    "electron-window-manager": "^1.0.4",
+    "googleapis": "^2.1.3",
+    "node-fetch": "^1.3.2",
+    "yargs": "^3.20.0"
+  },
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VigneshwaranR-Hexaware/electronApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VigneshwaranR-Hexaware/electronApp/issues"
+  },
+  "homepage": "https://github.com/VigneshwaranR-Hexaware/electronApp#readme"
+}
