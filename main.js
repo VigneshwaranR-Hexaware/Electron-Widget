@@ -51,6 +51,12 @@ function createWindow() {
       const exec = require('child_process').exec;
       exec('npm run test')
     }
+    
+    function facebooklogin(){
+      const exec = require('child_process').exec;
+      exec('npm run dev');
+     
+    }
             btnClose.addEventListener("click",function(){  var window = remote.getCurrentWindow();
 		    if (confirm('Are you sure want to exit')) {
 		        window.close();

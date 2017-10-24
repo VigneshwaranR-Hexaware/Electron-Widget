@@ -888,7 +888,7 @@ define(["utils"], function (utils) {
         return receiptBody + receipthtml;
     }
 
-    //login and logout template
+    //login and logout template for facebook googile and custome
 
     methods.logout=(data, uniqueId)=>{
         
@@ -904,12 +904,58 @@ define(["utils"], function (utils) {
                     </div>`;
                   
                for(let k=0;k<data.payload.elements[j].buttons.length;k++){
-               logouthtml+= `<div class="pmd-card-actions"><button data-target="#alert-dialog-1" data-toggle="modal" class="btn pmd-ripple-effect btn-primary pmd-z-depth" type="button" style="margin: 11px 10px;">${data.payload.elements[j].buttons[k].title}</button>`
+               logouthtml+= `<div class="col-xs-offset-3 col-xs-8"><button data-target="#alert-dialog-1" data-toggle="modal" class="btn btn-sm pmd-ripple-effect btn-primary pmd-z-depth col-xs-12" type="button" style="margin: 11px 10px;">${data.payload.elements[j].buttons[k].title}</button>`
                if(data.isWeb.indexOf("http://localhost:3000/") !== -1){  
-                logouthtml+=`<a href="#" onclick="signOut()">Google Sign out </a><div class="signoutuserContent">`
+                logouthtml += `<a href="#" onclick="signOut()" class="col-xs-12" style="padding:0px 0px">Google Sign out <div class="col-xs-12" style="padding:10px 0px"> 
+                <div class="fb-login-button" data-max-rows="1" data-size="medium" 
+data-button-type="continue_with" data-show-faces="false" 
+data-auto-logout-link="true" data-use-continue-as="false"></div>
+  <script>
+  function fbLogoutUser() {
+  FB.getLoginStatus(function(response) {
+  if (response && response.status === 'connected') {
+   FB.logout(function(response) {
+     }); 
+    }});}
+  function statusChangeCallback(response) {
+    if (response.status === 'connected') {
+      testAPI();
+    } else {
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    }}
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+    }); }
+  window.fbAsyncInit = function() {
+      FB.init({
+      appId      : '142030889871896',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+    FB.AppEvents.logPageView();
+  };
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10&appId=142030889871896";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+        document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+ }
+</script></a><div class="signoutuserContent"></div>`
                }else{
-                logouthtml+=`<a href="#" onclick="signOutElectron()">Google Sign Out </a><div class="signoutuserContentElectron">`
-                    }
+                logouthtml+=`<a href="#" class="btn btn-danger btn-block" onclick="signOutElectron()">Google Sign Out </a><div class="signoutuserContentElectron">`
+                logouthtml+='<a href="#" class="btn btn-primary btn-block" onclick="fbLogoutUser();">Facebook Sign Out</a><div class ="signoutuserFbElectron">'
+                            }
                     
                 logouthtml+=`<div tabindex="-1" class="modal fade" id="alert-dialog-1" style="display: none;" aria-hidden="true">
                    <div class="modal-dialog">
@@ -946,12 +992,57 @@ define(["utils"], function (utils) {
                     </div>`;
                 for(var j=0 ; j < data.payload[i].buttons.length;j++){
                 loginHTML+= ` 
-                <div class="col-xs-offset-2">  <button data-target="#alert-dialog" data-toggle="modal" class="btn btn-sm pmd-ripple-effect btn-primary pmd-z-depth col-xs-3" type="button">Log In</button>`
+                <div class="col-xs-offset-3 col-xs-8">  <button data-target="#alert-dialog" data-toggle="modal" class="btn btn-sm pmd-ripple-effect btn-primary pmd-z-depth col-xs-12" type="button">Log In</button><br></br>`
         
                 if(data.isWeb.indexOf("http://localhost:3000/") !== -1){                        
-                loginHTML+=`<div id="my-signin3" class="col-xs-8"></div> <div class="userContent"></div>`
+                loginHTML+=`<div id="my-signin3" class="col-xs-12"></div><br></br> 
+                <div class="fb-login-button" data-max-rows="1" data-size="medium" 
+data-button-type="continue_with" data-show-faces="false" 
+data-auto-logout-link="false" data-use-continue-as="false"></div>
+
+   <script>
+  function statusChangeCallback(response) {
+    if (response.status === 'connected') {
+      testAPI();
+    } else {
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    }  }
+ 
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+  window.fbAsyncInit = function() {
+      FB.init({
+      appId      : '142030889871896',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+    FB.AppEvents.logPageView();
+  };
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_GB/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.location.reload();
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+     }
+       </script> <div class="userContent"></div>`
                 }else{
-                loginHTML+=`<a  href="#" onclick="googleauthlogin();" id="google_oauth_login">Google Sign In</a>`  
+                loginHTML+=`<a  href="#" class="btn btn-danger btn-block" onclick="googleauthlogin();" id="google_oauth_login">Google Sign In</a>`; 
+                loginHTML+=`<a  href="#" class="btn btn-primary btn-block" onclick="facebooklogin();" id="facebook_oauth_login">Facebook Sign In</a>`     
                 }
                 
                

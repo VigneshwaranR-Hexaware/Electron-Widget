@@ -14,7 +14,10 @@ requirejs.config({
         },
         propeller: {
             deps: ['jquery', 'bootstrap']
-        }
+        },
+         facebook : {
+                exports: ['FB']
+              }
     },
     paths: {
         jquery: [
@@ -25,6 +28,7 @@ requirejs.config({
             'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min',
             'lib/bootstrap.min'
         ],
+        facebook: '//connect.facebook.net/en_US/sdk',
         uuid: 'lib/uuidv1',
         propeller: 'lib/propeller.min',
         settings: 'settings',
