@@ -679,19 +679,7 @@ define(["utils"], function (utils) {
          <table class="table table-bordered rounded col-md-8 col-md-pull-3 ">
          <div class="row">
          <div class="col-lg-1 col-centered">
-            <div class="pmd-card pmd-card-default pmd-z-depth">
-                <!-- Card header -->
-                <div
-                <div class="pmd-card-title">
-                    <div class="media-left">
-                        <a class="avatar-list-img" href="javascript:void(0);">
-                            <img src="${data.senderAvatar}" class="img-responsive">
-                        </a>
-                    </div>
-                    <div class="media-body media-middle">
-                        <h3 class="pmd-card-title-text">${data.senderName}</h3>
-                    </div>
-                </div>`
+           </div>`
         for (let i in data.payload) {
             if (data.payload[i].image_url != "" && data.payload[i].image_url != undefined) {
                 genericcardBody += ` <div class="pmd-card-media float-center">
