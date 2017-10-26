@@ -70,13 +70,15 @@
                   <i class="material-icons pmd-sm">face</i>
         </button>
         <button onclick="$(this).parent().find('input[type=file]').click();" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary"
-          type="button">
-                  <i class="material-icons pmd-sm">attach_file</i>
-                </button>
-        <button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button">
-                  <i class="material-icons pmd-sm">mic</i>
-                </button>
-        <input onchange="alert('your webhook ajax here');" type="file" class="hidden" name="attachment" />
+        type="button">
+            <i class="material-icons pmd-sm">attach_file</i>
+        </button>
+        <button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary speaker-text-response" type="button">
+            <i class="material-icons pmd-sm">mic</i>
+        </button>
+        <form class="uploadImage" enctype="multipart/form-data"  method="POST">
+            <input type="file" class="hidden" name="imagename" id="imagename" />
+        </form>
       </div>
     </div>
 

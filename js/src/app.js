@@ -272,8 +272,118 @@ define(['jquery', 'settings', 'apiService', 'utils'], function ($, config, apiSe
                 }
             });
         }
-        
 
+        /**
+		* Mic icon functionality. This will record the speech and transfer the same to text
+		*/
+        $(".speaker-text-response").click(function (e) {
+            switchRecognition();
+        });
+
+        var recognition;
+        function startRecognition() {
+            recognition = new webkitSpeechRecognition();
+
+            recognition.onstart = function (event) {
+                updateRec();
+                $("#btn-input").focus();
+            };
+
+            recognition.onresult = function (event) {
+                //recognition.onend = null;
+
+                var text = "";
+                for (var i = event.resultIndex; i < event.results.length; ++i) {
+                    text += event.results[i][0].transcript;
+                }
+                setInput(text, event);
+                //stopRecognition();
+            };
+
+            recognition.onend = function () {
+                stopRecognition();
+            };
+            recognition.lang = "en-US";
+            recognition.start();
+        }
+
+        function stopRecognition() {
+            if (recognition) {
+                recognition.stop();
+                recognition = null;
+            }
+            updateRec();
+        }
+
+        function switchRecognition() {
+          console.log(recognition);
+            if (recognition) {
+                stopRecognition();
+            } else {
+                startRecognition();
+            }
+        }
+
+        function setInput(text, event) {
+            console.log("Rec is " + recognition);
+            $("#btn-input").val(text);
+            sendMessage($("#btn-input"), event);
+        }
+
+        function updateRec() {
+            //$recBtn.text(recognition ? "Stop" : "Speak");
+            console.log("Click");
+
+        }
+
+        //End of speech to text related functions
+
+        //Start of File upload Logic
+        
+        var fileuploadeddat;
+        $('input#imagename').change(function (event) {
+            fileuploadeddat = this.files;
+            $('form.uploadImage').submit();
+            event.preventDefault();
+        })
+        $('form.uploadImage').submit(function (event) {
+            event.preventDefault();
+            var formData = new FormData($(this)[0]);
+            $.ajax({
+                url: '/upload',
+                type: 'POST',
+                xhr: function () { // Custom XMLHttpRequest
+                    var myXhr = $.ajaxSettings.xhr();
+                    if (myXhr.upload) { // Check if upload property exists
+                        //myXhr.upload.addEventListener('progress', progressHandlingFunction, false); // For handling the progress of the upload
+                    }
+                    return myXhr;
+                },
+                //Ajax events
+                beforeSend: function () {
+                    if (!fileuploadeddat) {
+                        alert("No file");
+                        return false;
+                    }
+                },
+                success: function (e) {
+                    console.log("Successful File Uploading");
+                    
+                },
+                error: function (e) {
+                    console.log("Error uploading file");
+                },
+                // Form data
+                data: formData,
+                //Options to tell jQuery not to process data or worry about content-type.
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+
+        });
+
+        //End of File upload Logic
 
     });
 });
